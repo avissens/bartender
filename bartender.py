@@ -16,6 +16,10 @@ ingredients = {
     "fruity": ["slice of orange", "dash of cassis", "cherry on top"],
 }
 
+#lists of names and adjectives for random drinks
+drink_noun = ["Margo", "Ice", "Dog", "Bird", "Heart"]
+drink_adjective = ["Fluffy", "Bloody", "Sunny", "Yellow", "Blue"]
+
 def asking_questions(questions):
 #asking questions and creating a new dictionary
     answers = {}
@@ -45,3 +49,4 @@ if __name__ == '__main__':
     answers = asking_questions(questions)
     drink = mixing_drinks(answers)
     print("Ingredients:", ", ".join(drink))
+    print(random.choice(drink_adjective) + " " + random.choice(drink_noun) + " " + "it is!")
