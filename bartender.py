@@ -45,8 +45,24 @@ def mixing_drinks(answers):
             drink.append(random.choice(ingredients[item]))
     return drink
 
-if __name__ == '__main__':
+def main():
+#main function asking questions and mixing drinks
     answers = asking_questions(questions)
     drink = mixing_drinks(answers)
     print("Ingredients:", ", ".join(drink))
     print(random.choice(drink_adjective) + " " + random.choice(drink_noun) + " " + "it is!")
+
+if __name__ == '__main__':
+    main()
+
+#asking for another drink
+    while True:
+        customer = input("Would you like another drink?" + "\nyes/no: ")
+        if customer == "yes":
+            main()
+        elif customer == "no":
+            print("Enjoy yourself and see you soon!")
+            break
+        else:
+            print("Pardon, I didn't get it...")
+            continue
