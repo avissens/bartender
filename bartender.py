@@ -43,14 +43,14 @@ def mixing_drinks(answers):
     for item in set(answers) & set(ingredients):
         if answers[item] == True:
             drink.append(random.choice(ingredients[item]))
+    print("Ingredients:", ", ".join(drink))
+    print(random.choice(drink_adjective) + " " + random.choice(drink_noun) + " " + "it is!")
     return drink
 
 def main():
 #main function asking questions and mixing drinks
     answers = asking_questions(questions)
     drink = mixing_drinks(answers)
-    print("Ingredients:", ", ".join(drink))
-    print(random.choice(drink_adjective) + " " + random.choice(drink_noun) + " " + "it is!")
 
 if __name__ == '__main__':
     main()
