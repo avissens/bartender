@@ -20,12 +20,14 @@ ingredients = {
 drink_noun = ["Margo", "Ice", "Dog", "Bird", "Heart"]
 drink_adjective = ["Fluffy", "Bloody", "Sunny", "Yellow", "Blue"]
 
+preferences = {}
+
 def asking_questions(questions):
 #asking questions and creating a new dictionary
     answers = {}
     for item in questions:
         while True:
-            answer = input(questions[item] + "\nyes/no: ")
+            answer = input(questions[item] + "\nyes/no: ")                                                
             if answer == "yes":
                 answer = True
                 break
@@ -33,7 +35,8 @@ def asking_questions(questions):
                 answer = False
                 break
             else:
-                answer = input("Enter a valid answer, please..." + "\nyes/no: ")
+                print("Enter a valid answer, please...")
+                continue
         answers[item] = answer
     return answers
 
@@ -47,22 +50,21 @@ def mixing_drinks(answers):
     print(random.choice(drink_adjective) + " " + random.choice(drink_noun) + " " + "it is!")
     return drink
 
-def main():
-#main function asking questions and mixing drinks
-    answers = asking_questions(questions)
-    drink = mixing_drinks(answers)
-
-if __name__ == '__main__':
-    main()
-
+def another_drink():
 #asking for another drink
     while True:
         customer = input("Would you like another drink?" + "\nyes/no: ")
         if customer == "yes":
-            main()
+            answers = asking_questions(questions)
+            drink = mixing_drinks(answers)
         elif customer == "no":
             print("Enjoy yourself and see you soon!")
             break
         else:
             print("Pardon, I didn't get it...")
             continue
+            
+if __name__ == '__main__':
+    answers = asking_questions(questions)
+    drink = mixing_drinks(answers)
+    another_drink()
