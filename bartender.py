@@ -20,8 +20,6 @@ ingredients = {
 drink_noun = ["Margo", "Ice", "Dog", "Bird", "Heart"]
 drink_adjective = ["Fluffy", "Bloody", "Sunny", "Yellow", "Blue"]
 
-preferences = {}
-
 def asking_questions(questions):
 #asking questions and creating a new dictionary
     answers = {}
